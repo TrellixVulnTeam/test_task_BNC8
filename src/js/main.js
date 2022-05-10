@@ -65,6 +65,8 @@ if (window.matchMedia("(max-width: 576px)").matches) {
 }
 
 (function($) {
+    
+    $( ".sideLink" ).first().removeClass( 'sideLink' );
     var width = screen.width;
     if (width > 768) {
         $('#accordionSidebar').addClass('active');

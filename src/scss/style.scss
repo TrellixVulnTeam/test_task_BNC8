@@ -52,6 +52,8 @@ body {
 
 .card {
   //z-index: -1;
+  
+  transition: 0.8s;
   box-shadow: 7px 7px 8px 0px #00000026;
   position: relative;
   display: flex;
@@ -67,6 +69,10 @@ body {
   .bitLeft {
     padding-left: 22px !important;
   }
+}
+.card:hover{
+  transition: 0.5s;  
+  box-shadow: 7px 7px 9px 0px #00000050;
 }
 .card-header {
   padding: 1rem 1.25rem 0rem 19px !important;
@@ -262,6 +268,7 @@ body {
 }
 
 .selectYear h6 {
+  margin-top: 1px;
   font-size: 14px;
   font-weight: 600;
   color: #43e8ff;
@@ -283,14 +290,38 @@ body {
   }
 }
 
+@media (hover: hover) and (pointer: fine) {
+  .sideLink:hover::before{
+    left: 0;
+    right: auto;
+    width: 100%;
+  }
+}
 .text-xs {
   font-size: 0.7rem;
+}
+.sideLink{
+  position: relative;
+}
+.sideLink::before{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #43e8ff;
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  }
+ a:hover{
+   color: #ffffff;
 }
 .sidebar {
   .toggled {
     width: 0 !important;
     overflow: hidden;
   }
+  
   .nav-item {
     .nav-link {
       position: relative;
@@ -313,8 +344,11 @@ body {
   background-color: #1f2339;
 }
 .navbar-nav > :first-child {
-  p {
-    color: #43e8ff;
+  a {
+    color: #43e8ff !important;
+  }
+  a:hover {
+    color: #43e8ff !important;
   }
 }
 

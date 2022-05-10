@@ -7250,6 +7250,9 @@ body {
 }
 
 .card {
+  -webkit-transition: 0.8s;
+  -o-transition: 0.8s;
+  transition: 0.8s;
   -webkit-box-shadow: 7px 7px 8px 0px rgba(0, 0, 0, 0.1490196078);
           box-shadow: 7px 7px 8px 0px rgba(0, 0, 0, 0.1490196078);
   position: relative;
@@ -7271,6 +7274,14 @@ body {
 
 .card .bitLeft {
   padding-left: 22px !important;
+}
+
+.card:hover {
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  -webkit-box-shadow: 7px 7px 9px 0px rgba(0, 0, 0, 0.3137254902);
+          box-shadow: 7px 7px 9px 0px rgba(0, 0, 0, 0.3137254902);
 }
 
 .card-header {
@@ -7434,6 +7445,7 @@ body {
 
 .selectYear h6,
 .selectYear .h6 {
+  margin-top: 1px;
   font-size: 14px;
   font-weight: 600;
   color: #43e8ff;
@@ -7453,6 +7465,27 @@ body {
 
 .text-xs {
   font-size: 0.7rem;
+}
+
+.sideLink {
+  position: relative;
+}
+
+.sideLink::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background-color: #43e8ff;
+  -webkit-transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  -o-transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  transition: width 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+a:hover {
+  color: #ffffff;
 }
 
 .sidebar {
@@ -7487,8 +7520,12 @@ body {
   margin-bottom: 1rem;
 }
 
-.navbar-nav > :first-child p {
-  color: #43e8ff;
+.navbar-nav > :first-child a {
+  color: #43e8ff !important;
+}
+
+.navbar-nav > :first-child a:hover {
+  color: #43e8ff !important;
 }
 
 .sidebar {
@@ -13902,5 +13939,13 @@ body {
 
   .d-print-none {
     display: none !important;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .sideLink:hover::before {
+    left: 0;
+    right: auto;
+    width: 100%;
   }
 }
